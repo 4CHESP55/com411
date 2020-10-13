@@ -1,16 +1,17 @@
-print("How many mountains should I display?")
-mountains = int(input())
+def run():
+  print("How many mountains should I display?")
+  mountains = int(input())
 
-print("Displaying...")
+  print("Displaying...")
 
-for mountain in range(mountains):
-  print("""
-            __
-            /  \\_  
-          /^    \\
-          /  ^    \\_
-        _/ ^ ^     ^\\
-      /  ^     ^    \\
+  for mountain in range(mountains):
+    print("""
+              __
+              /  \\_  
+            /^    \\
+            /  ^    \\_
+          _/ ^ ^     ^\\
+        /  ^     ^    \\
 
 
-      """)
+        """)

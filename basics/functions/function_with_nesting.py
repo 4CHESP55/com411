@@ -6,4 +6,5 @@ def identify():
   else:
     print("We will be fine.")
 
-identify()
+def run():
+  identify()

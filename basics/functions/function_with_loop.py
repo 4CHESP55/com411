@@ -8,5 +8,6 @@ def cross_bridge(distance):
   else:
     print("we must keep going!")
 
+def run():
 cross_bridge(3)
 cross_bridge(6)
