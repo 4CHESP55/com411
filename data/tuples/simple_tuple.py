@@ -6,3 +6,4 @@ def run():
   print("Minimum likelihood of falling: {}%".format(likelihood()))
 
 run()
+
