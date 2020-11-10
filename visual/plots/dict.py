@@ -50,7 +50,7 @@ def generate():
 def run():
   print("Running...")
   generate()
-  plt.show()
   print("...Done!")
+  plt.show()
 
 run()
