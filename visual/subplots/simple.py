@@ -10,7 +10,6 @@ def read_data(file_name):
 def run():
   data = read_data('temps.txt')
   num = list(range(1, len(data)+1))
-  print(num)
   fig, axs = plt.subplots(1, 2)
   axs[0].set_xlabel('Record')
   axs[0].set_ylabel('Temperature')
