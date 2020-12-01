@@ -8,11 +8,11 @@ class Robot:
     print(Robot.laws)
 
   # An initialiser (special instance method)
-  def __init__(self):
+  def __init__(self, name, age):
 
     # An instance attribute
-    self.name = "Robot"
-    self.age = 0
+    self.name = name
+    self.age = age
 
   # An instance method
   def display(self):
@@ -30,16 +30,16 @@ class Robot:
 class Human:
   MAX_ENERGY = 100
 
-  def __init__(self):
-    self.name = "Human"
-    self.age = 0
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
     self.energy = Human.MAX_ENERGY
 
   def display(self):
     print(f"I am {self.name}")
   
-  def grow(self):
-    self.age += 1
+  def grow(self, amount):
+    self.age += amount
 
   def eat(self, amount):
     if (self.energy + amount) <= Human.MAX_ENERGY:
