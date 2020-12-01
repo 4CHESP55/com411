@@ -18,7 +18,13 @@ class Robot:
   def display(self):
     print(f"I am {self.name}")
 
-class human:
+  def __repr__(self):
+    return f'robot(name={self.name}, age={self.age})'
+  
+  def __str__(self):
+    return f'My name is {self.name} and I am {self.age} years old.'
+
+class Human:
   MAX_ENERGY = 100
 
   def __init__(self):
@@ -28,7 +34,13 @@ class human:
 
   def display(self):
     print(f"I am {self.name}")
+  
+  def __repr__(self):
+    return f'human(name={self.name}, age={self.age}, energy={self.energy})'
+  
+  def __str__(self):
+    return f'My name is {self.name}, I am {self.age} years old and have {self.energy} energy.'
 
 if (__name__ == "__main__"):
-  human = human()
-  human.display()
+  human = Human()
+  print(human.__str__())
