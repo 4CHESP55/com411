@@ -68,4 +68,3 @@ if (__name__ == "__main__"):
   print(human.__repr__())
   human.eat(100)
   print(human.__repr__())
-
