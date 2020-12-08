@@ -28,6 +28,9 @@ class Inhabitant(ABC):
       self.energy = potential_energy
       return 0
   
+  def display(self):
+    print(f"I am {self.name}")
+  
   def grow(self):
     self.age += 1
 

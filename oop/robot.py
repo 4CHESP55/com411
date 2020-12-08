@@ -19,19 +19,6 @@ class Robot(Inhabitant):
 
   def __str__(self):
     return f'My name is {self.name} and I am {self.age} years old and my energy is {self.energy}.'
-  
-  # An instance method
-  def display(self):
-    print(f"I am {self.name}")
-
-  def eat(self, amount):
-    super().eat(amount)
-
-  def grow(self):
-    super().grow()
-
-  def move(self, distance):
-    super().move(distance)
 
 if (__name__ == "__main__"):
   robot = Robot()
