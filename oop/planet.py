@@ -4,33 +4,42 @@ from robot import Robot
 class Planet:
 
   def __init__(self):
-    self.inhabitants = {
-      'humans':[],
-      'robots':[]
-    }
+    self.inhabitants = []
+      
+  def countInhabitants(self):
+    self.num_humans = 0
+    self.num_robots = 0
+    for inhabitant in planet.inhabitants:
+      if isinstance(inhabitant, Human):
+        self.num_humans += 1
+      if isinstance(inhabitant, Robot):
+        self.num_robots += 1
 
   def __repr__(self):
-    return f"planet(humans={self.inhabitants['humans']}, robots={self.inhabitants['robots']})"
+    return f"planet(inhabitants={self.inhabitants})"
 
   def __str__(self):
-    return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots."
+    Planet.countInhabitants(self)
+    return f"This planet has {self.num_humans} humans and {self.num_robots} robots."
 
-  def add_human(self, human):
-    self.inhabitants['humans'].append(human)
+  def add_inhabitant(self, inhabitant):
+    self.inhabitants.append(inhabitant)
 
-  def add_robot(self, robot):
-    self.inhabitants['robots'].append(robot)
-
-  def remove_human(self, human):
-    self.inhabitants['humans'].remove(human)
-
-  def remove_robot(self, robot):
-    self.inhabitants['robots'].remove(robot)
+  def remove_inhabitant(self, inhabitant):
+    self.inhabitants.remove(inhabitant)
 
 if (__name__ == "__main__"):
   planet = Planet()
   print(repr(planet))
-  prins = Human("Prins")
-  planet.add_human(prins)
+  paul = Human("Paul", 12)
+  dan = Human("Dan", 32)
+  beep = Robot("Beep", 2)
+  planet.add_inhabitant(paul)
+  planet.add_inhabitant(dan)
+  planet.add_inhabitant(beep)
   print(repr(planet))
   print(planet)
+  planet.remove_inhabitant(paul)
+  print(planet)
+  num_humans = 0
+  num_robots = 0
