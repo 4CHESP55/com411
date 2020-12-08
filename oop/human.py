@@ -1,4 +1,6 @@
-class Robot:
+from inhabitant import Inhabitant
+
+class Robot(Inhabitant):
 
   # A class attribute
   laws = "Protect, Obey and Survive"
@@ -9,7 +11,7 @@ class Robot:
 
   # An initialiser (special instance method)
   def __init__(self, name, age):
-
+    super().__init__()
     # An instance attribute
     self.name = name
     self.age = age
@@ -27,13 +29,12 @@ class Robot:
   def __str__(self):
     return f'My name is {self.name} and I am {self.age} years old.'
 
-class Human:
-  MAX_ENERGY = 100
+class Human(Inhabitant):
 
   def __init__(self, name, age):
+    super().__init__()
     self.name = name
     self.age = age
-    self.energy = Human.MAX_ENERGY
 
   def display(self):
     print(f"I am {self.name}")
@@ -54,13 +55,15 @@ class Human:
       print("Can't move, not enough energy!")
   
   def __repr__(self):
+    super().__repr__()
     return f'human(name={self.name}, age={self.age}, energy={self.energy})'
   
   def __str__(self):
+    super().__str__()
     return f'My name is {self.name}, I am {self.age} years old and have {self.energy} energy.'
 
 if (__name__ == "__main__"):
-  human = Human()
+  human = Human("Paul", 12)
   print(human.__repr__())
   human.move(40)
   print(human.__repr__())
