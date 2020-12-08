@@ -28,12 +28,13 @@ class Planet:
   def __str__(self):
     return f'list of humans {self.humans}, list of robots {self.robots}.'
 
-planet = Planet()
-print(planet.__repr__())
-planet.add_human("Paul", 23)
-planet.add_human("Paul", 26)
-planet.add_robot("BEEP", 2)
-print(planet.__repr__())
-planet.remove_human(0)
-print(planet.__repr__())
-print(Planet.inhabitants)
+if (__name__ == "__main__"):
+  planet = Planet()
+  print(planet.__repr__())
+  planet.add_human("Paul", 23)
+  planet.add_human("Paul", 26)
+  planet.add_robot("BEEP", 2)
+  print(planet.__repr__())
+  planet.remove_human(0)
+  print(planet.__repr__())
+  print(Planet.inhabitants)
