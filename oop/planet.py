@@ -1,40 +1,36 @@
-import human as human
+from human import Human
+from robot import Robot
 
 class Planet:
-  inhabitants = {
-  'humans': [],
-  'robots': []
-  }
 
   def __init__(self):
-    self.humans = Planet.inhabitants['humans']
-    self.robots = Planet.inhabitants['robots']
-
-  def add_human(self, name, age):
-    newHuman = human.Human(name, age)
-    self.humans.append(newHuman)
-  def add_robot(self, name, age):
-    newRobot = human.Robot(name, age)
-    self.robots.append(newRobot)
-
-  def remove_human(self, num):
-    self.humans.pop(num)
-  def remove_robot(self, num):
-    self.robots.pop(num)
+    self.inhabitants = {
+      'humans':[],
+      'robots':[]
+    }
 
   def __repr__(self):
-    return f'Planet(humans={self.humans}, robots={self.robots})'
-  
+    return f"planet(humans={self.inhabitants['humans']}, robots={self.inhabitants['robots']})"
+
   def __str__(self):
-    return f'list of humans {self.humans}, list of robots {self.robots}.'
+    return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots."
+
+  def add_human(self, human):
+    self.inhabitants['humans'].append(human)
+
+  def add_robot(self, robot):
+    self.inhabitants['robots'].append(robot)
+
+  def remove_human(self, human):
+    self.inhabitants['humans'].remove(human)
+
+  def remove_robot(self, robot):
+    self.inhabitants['robots'].remove(robot)
 
 if (__name__ == "__main__"):
   planet = Planet()
-  print(planet.__repr__())
-  planet.add_human("Paul", 23)
-  planet.add_human("Paul", 26)
-  planet.add_robot("BEEP", 2)
-  print(planet.__repr__())
-  planet.remove_human(0)
-  print(planet.__repr__())
-  print(Planet.inhabitants)
+  print(repr(planet))
+  prins = Human("Prins")
+  planet.add_human(prins)
+  print(repr(planet))
+  print(planet)
